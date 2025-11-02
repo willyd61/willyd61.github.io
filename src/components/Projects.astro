@@ -1,0 +1,207 @@
+---
+const projects = [
+  {
+    title: 'Five 9s Achievement: NMS Customer Portal',
+    subtitle: 'April 2020 - October 2021',
+    description: 'Achieved 99.999% availability for enterprise monitoring platform serving 500+ critical systems across global financial infrastructure. Custom-compiled OpenNMS with NGINX SSL reverse proxy, integrated with 6 data sources including BMC Remedy, Cassandra, Salesforce, Kafka, and Splunk. Implemented complete DR/HA stack with PostgreSQL 12 cluster, Cassandra 3-node cluster, and hot/cold standby architecture.',
+    tech: ['OpenNMS', 'Grafana', 'PostgreSQL 12', 'Cassandra', 'Apache Kafka', 'NGINX', 'BMC Remedy', 'Splunk'],
+    metrics: [
+      { label: 'Uptime Achieved', value: '99.999%' },
+      { label: 'MTTR', value: '8 min' },
+      { label: 'Data Sources', value: '6+' },
+      { label: 'Systems Monitored', value: '500+' }
+    ],
+    achievements: [
+      'Reduced MTTR from 45 minutes to 8 minutes (82% improvement)',
+      'Real-time alerting via Apache Kafka for immediate incident response',
+      'Custom compilation of OpenNMS for optimized performance',
+      'Topology and geographical dashboards with automated geo-location',
+      'Self-contained dashboard sets for enhanced security and navigation',
+      'Complete high-availability across entire stack'
+    ],
+    diagram: '/architecture-nginx.png',
+    link: '#',
+    featured: true
+  },
+  {
+    title: 'DevOps Transformation: Source of Truth Implementation',
+    subtitle: 'Network to Code - July 2023 - September 2025',
+    description: 'Led comprehensive transformation of company DevOps core structure, overhauling source of truth data repositories (IPAM, DNS, SOT, Code Revision). Implemented standardized orchestrations using Ansible for device configuration management and MuleSoft for application integration. Large-scale implementation replacing significant portion of core systems, aligned with zero-touch provisioning strategy.',
+    tech: ['Nautobot', 'Ansible', 'GitLab', 'MuleSoft', 'Splunk', 'MkDocs', 'Python', 'Docker', 'Grafana'],
+    metrics: [
+      { label: 'Provisioning Time', value: '-89%' },
+      { label: 'Config Drift', value: '-90%' },
+      { label: 'Compliance Score', value: '98%' },
+      { label: 'Automation Coverage', value: '80%' }
+    ],
+    achievements: [
+      'Standardized documentation practices through GitLab and MkDocs',
+      'Compliance management and activity tracking via Splunk',
+      'Maintained stringent high-security standards throughout transformation',
+      'Zero-touch provisioning strategy implementation',
+      'Self-service infrastructure provisioning for development teams'
+    ],
+    link: '#'
+  },
+  {
+    title: 'Event-Driven Password Management with Kafka Streams',
+    subtitle: 'March 2021 - May 2022',
+    description: 'Designed and implemented event-driven password management solution using Apache Kafka Streams. Password State triggers automated account password rotation workflows with real-time event processing. Integrated with Grafana for monitoring and GitHub for version-controlled playbook management.',
+    tech: ['Apache Kafka', 'Kafka Streams', 'Grafana', 'GitHub', 'Python', 'Password State', 'Event-Driven Architecture'],
+    metrics: [
+      { label: 'Automated Rotations', value: '100%' },
+      { label: 'Response Time', value: '<2s' },
+      { label: 'Accounts Managed', value: '1000+' },
+      { label: 'Integration Points', value: '14+' }
+    ],
+    achievements: [
+      'Real-time password rotation triggered by state changes',
+      'Event-driven architecture for scalable credential management',
+      'Grafana dashboards for monitoring password lifecycle',
+      'Automated compliance reporting and audit trails'
+    ],
+    link: '#'
+  },
+  {
+    title: 'Nautobot on RHEL: Production-Grade Documentation',
+    description: 'Comprehensive installation guide for Nautobot (Network Source of Truth) with DISA STIG security hardening, air-gapped deployment procedures, and PostgreSQL security best practices. Community-referenced implementation guide.',
+    tech: ['Nautobot', 'RHEL 8', 'PostgreSQL', 'SELinux', 'Ansible'],
+    metrics: [
+      { label: 'GitHub Stars', value: 'XX+' },
+      { label: 'Security Standard', value: 'DISA STIG' },
+      { label: 'Organizations Using', value: 'XX+' },
+      { label: 'Documentation Pages', value: '50+' }
+    ],
+    link: 'https://github.com/willyd61/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through',
+    github: true
+  }
+];
+---
+
+<section id="projects" class="py-20 bg-background-primary">
+  <div class="container mx-auto px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="section-heading text-center">Featured Projects</h2>
+      <p class="section-subheading text-center max-w-3xl mx-auto">
+        Real-world solutions delivering measurable business impact through reliability engineering
+      </p>
+      
+      <div class="space-y-8">
+        {projects.map((project, index) => (
+          <article class:list={['card group', project.featured && 'border-primary/40']}>
+            {project.featured && (
+              <div class="mb-4">
+                <span class="px-3 py-1 bg-primary/20 text-primary text-sm rounded-full font-semibold">
+                  ⭐ Flagship Project
+                </span>
+              </div>
+            )}
+            
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="md:col-span-2">
+                <h3 class="text-2xl font-bold text-text-primary mb-1 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                {project.subtitle && (
+                  <p class="text-sm text-text-muted mb-3 flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    {project.subtitle}
+                  </p>
+                )}
+                
+                <p class="text-text-secondary mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+                
+                {project.diagram && (
+                  <div class="mb-4">
+                    <img 
+                      src={project.diagram} 
+                      alt={`${project.title} - Architecture Diagram`}
+                      class="w-full rounded-lg border-2 border-primary/20 hover:border-primary/40 transition-colors cursor-pointer shadow-lg"
+                      loading="lazy"
+                    />
+                    <p class="text-xs text-text-muted mt-2 text-center">
+                      System Architecture: Multi-tier infrastructure with NGINX reverse proxy
+                    </p>
+                  </div>
+                )}
+                
+                {project.achievements && (
+                  <div class="mb-4">
+                    <p class="text-sm font-semibold text-text-primary mb-2">Key Achievements:</p>
+                    <ul class="space-y-1">
+                      {project.achievements.map(achievement => (
+                        <li class="flex items-start gap-2 text-sm text-text-secondary">
+                          <svg class="w-4 h-4 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                          </svg>
+                          <span>{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map(tech => (
+                    <span class="px-3 py-1 bg-background-secondary text-text-primary text-sm rounded border border-primary/20">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
+                <a 
+                  href={project.link}
+                  class:list={[
+                    'inline-flex items-center gap-2 text-primary hover:text-primary-light transition-colors font-semibold',
+                    project.github && 'hover:underline'
+                  ]}
+                  target={project.github ? '_blank' : undefined}
+                  rel={project.github ? 'noopener noreferrer' : undefined}
+                >
+                  {project.github ? 'View on GitHub' : 'Read Full Case Study'}
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                  </svg>
+                </a>
+              </div>
+              
+              <div class="md:col-span-1">
+                <div class="grid grid-cols-2 gap-4">
+                  {project.metrics.map(metric => (
+                    <div class="bg-background-secondary p-4 rounded-lg border border-primary/10">
+                      <div class="text-2xl font-bold text-primary mb-1">
+                        {metric.value}
+                      </div>
+                      <div class="text-xs text-text-muted">
+                        {metric.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+      
+      <!-- GitHub Link -->
+      <div class="mt-12 text-center">
+        <a 
+          href="https://github.com/willyd61" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 px-8 py-4 bg-background-card border-2 border-primary/30 text-text-primary rounded-lg font-semibold hover:border-primary hover:bg-primary/5 transition-all duration-300"
+        >
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          View All Projects on GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

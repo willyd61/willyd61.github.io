@@ -1,0 +1,35 @@
+{
+  "updated": "2025-11-01T00:00:00.000Z",
+  "user": {
+    "name": "William Lipford",
+    "bio": "Innovative Technical Lead specializing in Automation DevOps, with over two decades of experience",
+    "location": "Carolina Beach, North Carolina",
+    "company": "Transaction Network Services",
+    "blog": "",
+    "twitter": null,
+    "avatar_url": "https://github.com/willyd61.png",
+    "followers": 0,
+    "following": 0,
+    "public_repos": 0
+  },
+  "featuredRepos": [
+    {
+      "name": "Installing-Nautobot-on-RHEL-A-Complete-Walk-Through",
+      "description": "Installing Nautobot on Red Hat Enterprise Linux 8 - A Complete Walk-Through with DISA STIG security hardening",
+      "url": "https://github.com/willyd61/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through",
+      "homepage": "",
+      "stars": 0,
+      "forks": 0,
+      "language": "Shell",
+      "topics": ["nautobot", "rhel", "security", "documentation"],
+      "updated": "2024-01-01T00:00:00Z",
+      "created": "2023-01-01T00:00:00Z"
+    }
+  ],
+  "stats": {
+    "totalRepos": 1,
+    "totalStars": 0,
+    "totalForks": 0,
+    "languages": ["Python", "Shell", "JavaScript", "PHP"]
+  }
+}

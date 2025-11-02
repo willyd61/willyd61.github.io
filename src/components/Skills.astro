@@ -1,0 +1,150 @@
+---
+const skills = [
+  {
+    category: 'Site Reliability Engineering',
+    level: 12,
+    maxLevel: 12,
+    years: '20 yrs',
+    items: ['SLO/SLI Design', 'Incident Response', 'Capacity Planning', 'Chaos Engineering', 'Five 9s HA Architecture']
+  },
+  {
+    category: 'Observability & Monitoring',
+    level: 12,
+    maxLevel: 12,
+    years: '20 yrs',
+    items: ['OpenNMS (v22-27)', 'Grafana Dashboards', 'Prometheus', 'Splunk', 'Apache Kafka']
+  },
+  {
+    category: 'DevOps & Automation',
+    level: 12,
+    maxLevel: 12,
+    years: '15 yrs',
+    items: ['Ansible', 'GitLab CI/CD', 'Python Scripting', 'MuleSoft Integration', 'Infrastructure as Code']
+  },
+  {
+    category: 'Cloud & Platform Engineering',
+    level: 11,
+    maxLevel: 12,
+    years: '15 yrs',
+    items: ['Multi-Cloud Architecture', 'Container Orchestration', 'Network Automation (Nautobot)', 'Platform Engineering']
+  },
+  {
+    category: 'Database & Data Systems',
+    level: 11,
+    maxLevel: 12,
+    years: '15 yrs',
+    items: ['PostgreSQL Clusters', 'Cassandra Multi-node', 'Redis', 'Database HA/DR']
+  },
+  {
+    category: 'Security & Compliance',
+    level: 11,
+    maxLevel: 12,
+    years: '10 yrs',
+    items: ['DISA STIG Implementation', 'RHEL Hardening', 'SSL/TLS Config', 'SELinux', 'Compliance Automation']
+  },
+  {
+    category: 'AI/ML Infrastructure',
+    level: 4,
+    maxLevel: 12,
+    years: '1 yr',
+    items: ['MLOps Best Practices', 'AI-driven Observability', 'Platform SRE for AI', 'Emerging Technologies'],
+    emerging: true
+  }
+];
+---
+
+<section id="skills" class="py-20 bg-background-secondary">
+  <div class="container mx-auto px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="section-heading text-center">Core Competencies</h2>
+      <p class="section-subheading text-center max-w-3xl mx-auto">
+        Two decades of hands-on experience building and scaling reliable infrastructure
+      </p>
+      
+      <div class="grid gap-6 md:grid-cols-2">
+        {skills.map(skill => (
+          <div class:list={['card', skill.emerging && 'border-warning/30']}>
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-text-primary mb-2">
+                  {skill.category}
+                  {skill.emerging && (
+                    <span class="ml-2 px-2 py-1 text-xs bg-warning/20 text-warning rounded-full">
+                      Emerging
+                    </span>
+                  )}
+                </h3>
+                <p class="text-sm text-text-muted">{skill.years} experience</p>
+              </div>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="mb-4">
+              <div class="h-2 bg-background-primary rounded-full overflow-hidden">
+                <div 
+                  class="h-full bg-gradient-to-r from-primary to-primary-light rounded-full transition-all duration-1000"
+                  style={`width: ${(skill.level / skill.maxLevel) * 100}%`}
+                ></div>
+              </div>
+              <p class="text-xs text-text-muted mt-1 text-right">
+                {skill.level === skill.maxLevel ? 'Expert' : 'Advanced'}
+              </p>
+            </div>
+            
+            <!-- Key Skills -->
+            <div class="flex flex-wrap gap-2">
+              {skill.items.map(item => (
+                <span class="px-3 py-1 bg-background-primary text-text-secondary text-xs rounded-full border border-primary/20 hover:border-primary/50 transition-colors">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Certifications -->
+      <div class="mt-12 card">
+        <h3 class="text-2xl font-bold text-text-primary mb-6">Certifications & Training</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-success flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <p class="font-semibold text-text-primary">ITIL 4 Foundation</p>
+              <p class="text-sm text-text-muted">IT Service Management (2024-2027)</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-success flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <p class="font-semibold text-text-primary">SolarWinds Certified Professional</p>
+              <p class="text-sm text-text-muted">Network Management (2015-2020)</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-success flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <p class="font-semibold text-text-primary">Network to Code Training</p>
+              <p class="text-sm text-text-muted">Network Automation, Nautobot, Python</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-success flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <p class="font-semibold text-text-primary">Continuous Learning</p>
+              <p class="text-sm text-text-muted">MLOps, Kubernetes (CKA path)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

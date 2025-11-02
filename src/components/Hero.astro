@@ -1,0 +1,81 @@
+---
+const stats = [
+  { label: 'Years Experience', value: '25+' },
+  { label: 'Uptime Achievement', value: '99.999%' },
+  { label: 'MTTR Reduction', value: '82%' },
+  { label: 'Systems Managed', value: '500+' }
+];
+---
+
+<section class="relative min-h-screen flex items-center justify-center bg-background-primary text-text-primary overflow-hidden">
+  <!-- Animated background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-background-secondary/20"></div>
+  
+  <!-- Floating particles effect (optional) -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  </div>
+
+  <div class="container mx-auto px-6 py-20 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Name & Title -->
+      <div class="animate-fade-in">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary-light to-primary bg-clip-text text-transparent">
+          William Lipford
+        </h1>
+        
+        <p class="text-2xl md:text-3xl text-text-secondary mb-4 font-semibold">
+          Senior Automation Engineer | Site Reliability Engineer
+        </p>
+        
+        <p class="text-lg md:text-xl text-text-muted mb-8">
+          Currently at Foresight Tech Sourcing | 25+ Years Engineering Resilient Systems
+        </p>
+      </div>
+      
+      <!-- Value Proposition -->
+      <div class="animate-slide-up">
+        <p class="text-xl md:text-2xl text-text-primary mb-12 max-w-3xl mx-auto leading-relaxed">
+          Transforming reliability from reactive firefighting to proactive architecture. 
+          <span class="text-primary font-semibold">Achieved Five 9s uptime</span> for mission-critical 
+          financial systems through chaos engineering, automation, and intelligent observability.
+        </p>
+      </div>
+      
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 animate-slide-up">
+        {stats.map(stat => (
+          <div class="card group cursor-default">
+            <div class="text-3xl md:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
+              {stat.value}
+            </div>
+            <div class="text-sm text-text-muted">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
+        <a href="#projects" class="btn-primary">
+          View Case Studies
+        </a>
+        <a href="/resume.pdf" class="btn-secondary">
+          Download Resume
+        </a>
+        <a href="#contact" class="px-8 py-4 border-2 border-text-muted text-text-primary rounded-lg font-semibold hover:border-primary hover:text-primary transition-all duration-300">
+          Contact
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
+    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+    </svg>
+  </div>
+</section>

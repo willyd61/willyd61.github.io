@@ -1,0 +1,52 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Site Reliability Engineer, SRE, DevOps Engineer, Infrastructure Architect, OpenNMS, Ansible, High Availability, Five 9s, Cloud Infrastructure, Network Automation, William Lipford" />
+    <meta name="author" content="William Lipford" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://willyd61.github.io/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://willyd61.github.io/og-image.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://willyd61.github.io/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="https://willyd61.github.io/og-image.png" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://willyd61.github.io/" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Generator -->
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class="min-h-screen">
+    <slot />
+  </body>
+</html>

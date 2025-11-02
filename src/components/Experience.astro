@@ -1,0 +1,287 @@
+---
+const experiences = [
+  {
+    company: 'Foresight Tech Sourcing Inc.',
+    role: 'Senior Automation Engineer',
+    period: 'January 2025 - Present',
+    location: 'Remote',
+    type: 'Full-time',
+    current: true,
+    highlights: [
+      'Serving as technical lead and architect driving innovative automation engineering solutions',
+      'Leveraging cutting-edge technology to enhance site reliability and performance',
+      'Leading CI/CD pipeline development and DevOps transformation initiatives',
+      'Fostering excellence in every project through innovative automation strategies'
+    ],
+    skills: ['Continuous Integration (CI)', 'DevOps', 'Automation Engineering', 'Site Reliability']
+  },
+  {
+    company: 'Transaction Network Services',
+    role: 'Technical Lead, Automation DevOps',
+    period: 'January 2022 - September 2025',
+    location: 'Virginia, United States (Remote)',
+    type: 'Full-time',
+    highlights: [
+      'Spearheaded comprehensive transformation of DevOps core structure',
+      'Overhauled source of truth data repositories (IPAM, DNS, SOT, Code Revision)',
+      'Implemented standardized DevOps orchestrations using Ansible and MuleSoft',
+      'Established documentation standards through GitLab and MkDocs',
+      'Led large-scale implementation aligning with zero-touch provisioning strategy',
+      'Maintained stringent high-security standards for data integrity'
+    ],
+    skills: ['Network Automation', 'DevOps', 'Ansible', 'GitLab', 'MuleSoft', 'Splunk']
+  },
+  {
+    company: 'Transaction Network Services',
+    role: 'Sr. NMS Engineer',
+    period: 'January 2015 - January 2021',
+    location: 'Reston, Virginia (Hybrid)',
+    type: 'Full-time',
+    achievement: '⭐ Achieved Five 9s (99.999%) Uptime',
+    highlights: [
+      'Deployed SolarWinds solution for SNMP/ICMP polling and NCM management',
+      'Developed Network Automation engine with MongoDB asynchronous communication',
+      'Achieved 99.999% availability for enterprise monitoring platform',
+      'Designed and deployed OpenNMS (v22.01 → v27.0.1) with DR/HA architecture',
+      'Built Grafana integration with 6+ data sources (Remedy, Cassandra, Kafka, Splunk)',
+      'Implemented Cassandra 3-node cluster and PostgreSQL 12 cluster with DR failover',
+      'Reduced MTTR from 45 minutes to 8 minutes (82% improvement)',
+      'Provided 24/7 operational support for mission-critical financial systems'
+    ],
+    skills: ['OpenNMS', 'Grafana', 'SolarWinds', 'PostgreSQL', 'Cassandra', 'Apache Kafka', 'BMC Remedy', 'Network Management']
+  },
+  {
+    company: 'Transaction Network Services',
+    role: 'Senior Application Architect',
+    period: 'June 2000 - March 2015',
+    location: 'Reston, Virginia (Hybrid)',
+    type: 'Full-time',
+    highlights: [
+      'Deployed IT solutions for financial and operations sectors',
+      'Primary integration developer for 6+ major applications',
+      'Provided consultative guidance to junior architects',
+      'Managed end-to-end website development for custom applications',
+      'Maintained applications with 24/7 support for SLA commitments'
+    ],
+    skills: ['Integration', 'Full-Stack Development', 'Architecture', 'Database Management']
+  }
+];
+
+const certifications = [
+  {
+    name: 'Automating Networks with Python II',
+    issuer: 'Network to Code',
+    date: 'April 2025',
+    status: 'Current',
+    credentialId: '193_5_13317_1744980730'
+  },
+  {
+    name: 'Automating Nautobot with Python & Ansible Workshop',
+    issuer: 'Network to Code',
+    date: 'December 2024',
+    status: 'Current',
+    credentialId: '155_5_13317_1734473903'
+  },
+  {
+    name: 'Nautobot Config Compliance & Remediation w/ Golden Config',
+    issuer: 'Network to Code',
+    date: 'December 2024',
+    expires: 'December 2034',
+    credentialId: 'I-D19PVG'
+  },
+  {
+    name: 'Nautobot Extensibility Workshop',
+    issuer: 'Network to Code',
+    date: 'December 2024',
+    status: 'Current',
+    credentialId: '154_5_13317_1734447661'
+  },
+  {
+    name: 'ITIL 4 Foundation Certificate in IT Service Management',
+    issuer: 'PeopleCert',
+    date: 'November 2024',
+    expires: 'November 2027',
+    credentialId: 'GR67170837OWL',
+    badge: 'ITIL-4 Foundation Certified'
+  },
+  {
+    name: 'Collaborative Workflows with Git and GitHub',
+    issuer: 'Network to Code',
+    date: 'October 2023',
+    status: 'Current'
+  },
+  {
+    name: 'Network Programming and Automation',
+    issuer: 'Network to Code',
+    date: 'October 2023',
+    status: 'Current'
+  },
+  {
+    name: 'SolarWinds Certified Professional',
+    issuer: 'SolarWinds',
+    date: 'October 2015',
+    expired: 'October 2020',
+    credentialId: 'SCP4816'
+  }
+];
+---
+
+<section id="experience" class="py-20 bg-background-primary">
+  <div class="container mx-auto px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="section-heading text-center">Professional Experience</h2>
+      <p class="section-subheading text-center max-w-3xl mx-auto mb-12">
+        25+ years driving infrastructure reliability and automation excellence
+      </p>
+      
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Vertical line -->
+        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-primary/20"></div>
+        
+        <div class="space-y-12">
+          {experiences.map((exp, index) => (
+            <div class:list={['relative', index % 2 === 0 ? 'md:pr-1/2' : 'md:pl-1/2 md:ml-1/2']}>
+              <!-- Timeline dot -->
+              <div class="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1">
+                <div class:list={[
+                  'w-4 h-4 rounded-full border-4 border-background-primary',
+                  exp.current ? 'bg-success animate-pulse' : 'bg-primary'
+                ]}></div>
+              </div>
+              
+              <article class="card hover:border-primary/50 transition-all duration-300">
+                {exp.current && (
+                  <div class="mb-4">
+                    <span class="px-3 py-1 bg-success/20 text-success text-sm rounded-full font-semibold">
+                      ✓ Current Position
+                    </span>
+                  </div>
+                )}
+                {exp.achievement && (
+                  <div class="mb-4">
+                    <span class="px-3 py-1 bg-primary/20 text-primary text-sm rounded-full font-semibold">
+                      {exp.achievement}
+                    </span>
+                  </div>
+                )}
+                
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
+                  <div>
+                    <h3 class="text-2xl font-bold text-text-primary mb-1">
+                      {exp.role}
+                    </h3>
+                    <p class="text-lg text-primary font-semibold mb-2">
+                      {exp.company}
+                    </p>
+                  </div>
+                  <div class="text-sm text-text-muted">
+                    <div class="flex items-center gap-2 mb-1">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                      </svg>
+                      {exp.period}
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                      {exp.location}
+                    </div>
+                  </div>
+                </div>
+                
+                <ul class="space-y-2 mb-4">
+                  {exp.highlights.map(highlight => (
+                    <li class="flex items-start gap-2 text-text-secondary">
+                      <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div class="flex flex-wrap gap-2">
+                  {exp.skills.map(skill => (
+                    <span class="px-3 py-1 bg-background-secondary text-text-muted text-xs rounded-full border border-primary/10">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Certifications Section -->
+      <div class="mt-16">
+        <h3 class="text-3xl font-bold text-text-primary text-center mb-8">
+          Certifications & Professional Development
+        </h3>
+        
+        <div class="grid md:grid-cols-2 gap-4">
+          {certifications.map(cert => (
+            <div class="card border-primary/10 hover:border-primary/30 transition-colors">
+              <div class="flex items-start gap-3">
+                <svg class:list={[
+                  'w-6 h-6 flex-shrink-0 mt-1',
+                  cert.expired ? 'text-text-muted' : 'text-success'
+                ]} fill="currentColor" viewBox="0 0 20 20">
+                  {!cert.expired ? (
+                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  ) : (
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                  )}
+                </svg>
+                <div class="flex-1">
+                  <p class:list={[
+                    'font-semibold',
+                    cert.expired ? 'text-text-muted' : 'text-text-primary'
+                  ]}>
+                    {cert.name}
+                  </p>
+                  <p class="text-sm text-text-muted">{cert.issuer}</p>
+                  <div class="text-xs text-text-muted mt-1">
+                    {cert.date}
+                    {cert.expires && ` • Expires ${cert.expires}`}
+                    {cert.expired && ` • Expired ${cert.expired}`}
+                    {cert.status === 'Current' && ' • Current'}
+                  </div>
+                  {cert.credentialId && (
+                    <p class="text-xs text-text-muted mt-1">
+                      ID: {cert.credentialId}
+                    </p>
+                  )}
+                  {cert.badge && (
+                    <span class="inline-block mt-2 px-2 py-1 bg-primary/10 text-primary text-xs rounded">
+                      {cert.badge}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Continuous Learning Note -->
+      <div class="mt-8 card border-warning/30 bg-warning/5">
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-warning flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+          </svg>
+          <div>
+            <p class="font-semibold text-text-primary mb-1">Continuous Learning Path</p>
+            <p class="text-sm text-text-secondary">
+              Currently expanding expertise in MLOps, Kubernetes (CKA certification path), 
+              and Platform Engineering to stay at the forefront of SRE evolution.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background-primary text-text-primary antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background-primary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full hover:bg-primary/50;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-4 bg-primary text-background-primary rounded-lg font-semibold hover:bg-primary-light transition-all duration-300 shadow-lg hover:shadow-primary/50;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-background-card border border-primary/20 rounded-lg p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300;
+  }
+
+  .section-heading {
+    @apply text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary-light to-primary bg-clip-text text-transparent;
+  }
+
+  .section-subheading {
+    @apply text-xl md:text-2xl text-text-secondary mb-8;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-light to-primary bg-clip-text text-transparent;
+  }
+}
