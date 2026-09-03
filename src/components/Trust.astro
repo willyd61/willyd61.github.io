@@ -1,0 +1,40 @@
+---
+const recommendations = [
+  {
+    quote: 'Adaptable, intellectually curious and self-directed — equally willing to work across cutting-edge and legacy systems.',
+    source: 'Long-term direct manager',
+    context: 'Managed William as a Senior Application Architect'
+  },
+  {
+    quote: 'Deep understanding of complex technical challenges, paired with creativity, precision and a collaborative learning mindset.',
+    source: 'Director, Telecom Network Planning',
+    context: 'Cross-functional technology leadership'
+  },
+  {
+    quote: 'Mentoring, knowledge sharing and proactive ownership that elevates the capability of the organization around him.',
+    source: 'Leadership & peer feedback',
+    context: 'Recurring theme across written recommendations'
+  }
+];
+---
+
+<section id="trust" class="section-band trust-section">
+  <div class="site-shell">
+    <div class="section-intro split-intro">
+      <div>
+        <p class="section-index">Proof of trust</p>
+        <h2>Trusted by leaders, managers &amp; peers.</h2>
+      </div>
+      <p>The technical story is stronger when the people who worked alongside it independently say the same thing.</p>
+    </div>
+
+    <div class="trust-grid">
+      {recommendations.map((item) => (
+        <figure class="trust-quote">
+          <blockquote>“{item.quote}”</blockquote>
+          <figcaption><strong>{item.source}</strong><span>{item.context}</span></figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
